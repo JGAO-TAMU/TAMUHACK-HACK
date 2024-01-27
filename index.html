@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Web Quiz</title>
-    <!-- Link to CSS file -->
+    <title>My Cat Quiz</title>
+    
 </head>
 <body>
-    <div id="quiz-container">
+    <div id="question1">
+        <h2>What is the best cat color?</h2>
         <!-- Quiz content will go here -->
+        <ul>
+            <li>
+                <input type="radio" id="option1" name="question1" value="Orange">
+                <label for="option1">Orange</label>
+            </li>
+            <li>
+                <input type="radio" id="option2" name="question1" value="Black">
+                <label for="option2">Black</label>
+            </li>
+            <li>
+                <input type="radio" id="option3" name="question1" value="Gray">
+                <label for="option3">Gray</label>
+            </li>
+            <li>
+                <input type="radio" id="option4" name="question1" value="Brown">
+                <label for="option4">Brown</label>
+            </li>
+        </ul>
     </div>
     <button id="submit-button">Submit</button>
-    <div id="result"></div>
+    
+    <div id="result1"></div>
+    
     <!-- Link to JavaScript file -->
+    <script src="checkq1.js"></script>
+    
 </body>
 </html>

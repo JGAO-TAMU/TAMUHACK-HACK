@@ -1,6 +1,10 @@
 body {
     font-family: Arial, sans-serif;
 }
+/*Each question can be in its own div element, 
+and you can initially hide all questions except the first one.*/
+
+
 #quiz-container {
     margin: 20px;
     /* Add more styles */
