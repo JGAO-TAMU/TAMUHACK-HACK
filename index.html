@@ -8,7 +8,7 @@
 
 <body>
     <div id="quiz">
-    
+        <div id="score">score: 0</div>
         <!-- Quiz content will go here -->
         <!-- Question 1 -->
         <div class="question" id="question1">
@@ -16,23 +16,23 @@
         <ul>
             <li>
                 <input type="radio" id="option1" name="question1" value="Orange">
-                <label for="option1">Orange</label>
+                <label for="q1option1">Orange</label>
             </li>
             <li>
                 <input type="radio" id="option2" name="question1" value="Black">
-                <label for="option2">Black</label>
+                <label for="q1option2">Black</label>
             </li>
             <li>
                 <input type="radio" id="option3" name="question1" value="Gray">
-                <label for="option3">Gray</label>
+                <label for="q1option3">Gray</label>
             </li>
             <li>
                 <input type="radio" id="option4" name="question1" value="Brown">
-                <label for="option4">Brown</label>
+                <label for="q1option4">Brown</label>
             </li>
         </ul>
-        <button id="next-button1" onclick="showNextQuestion(1)">Next</button>
-    <button id="submit-button1" onclick="checkQuestion1()" >Submit</button>
+        <button id="next-button1" onclick="checkQuestion1();showNextQuestion(1); ">Next</button>
+    <!--<button id="submit-button1" onclick="checkQuestion1()" >Submit</button>-->
     <div id="result1"></div>
     </div>
     
@@ -45,30 +45,143 @@
         <ul>
             <li>
                 <input type="radio" id="option1" name="question2" value="Golden">
-                <label for="option1">Golden</label>
+                <label for="q2option1">Golden</label>
             </li>
             <li>
                 <input type="radio" id="option2" name="question2" value="Black">
-                <label for="option2">Black</label>
+                <label for="q2option2">Black</label>
             </li>
             <li>
                 <input type="radio" id="option3" name="question2" value="Gray">
-                <label for="option3">Gray</label>
+                <label for="q2option3">Gray</label>
             </li>
             <li>
                 <input type="radio" id="option4" name="question2" value="Brown">
-                <label for="option4">Brown</label>
+                <label for="q2option4">Brown</label>
             </li>
         </ul>
-        <button id="submit-button2" onclick="checkQuestion2()" style="display:none">Submit</button>
-        <button id="next-button2" onclick="showNextQuestion(2)" style="display:none">Next</button>
+        <button id="next-button2" onclick="checkQuestion2(); showNextQuestion(2)" style="display:none">Submit</button>
+        <!--<button id="next-button2" onclick="showNextQuestion(2)" style="display:none">Next</button>-->
         <div id="result2"></div>
     </div>
     
    
     
     <!--end Q2 -->
+    <!-- Question 3 -->
+    <div class="question" id="question3" style="display:none">
+        <h2>Which is the fastest land animal?</h2>
+        <ul>
+            <li>
+                <input type="radio" id="q3option1" name="question3" value="Cheetah">
+                <label for="q3option1">Cheetah</label>
+            </li>
+            <li>
+                <input type="radio" id="q3option2" name="question3" value="Lion">
+                <label for="q3option2">Lion</label>
+            </li>
+            <li>
+                <input type="radio" id="q3option3" name="question3" value="Horse">
+                <label for="q3option3">Horse</label>
+            </li>
+            <li>
+                <input type="radio" id="q3option4" name="question3" value="Ostrich">
+                <label for="q3option4">Ostrich</label>
+            </li>
+        </ul>
+        <button id="next-button3" onclick=" checkQuestion3();showNextQuestion(3);">Next</button>
+        <div id="result3"></div>
+    </div>
 
+    <!--end Q3 -->
+
+    <!-- Question 4 -->
+    <div class="question" id="question4" style="display:none">
+        <h2>What is the largest planet in our solar system?</h2>
+        <ul>
+            <li>
+                <input type="radio" id="q4option1" name="question4" value="Jupiter">
+                <label for="q4option1">Jupiter</label>
+            </li>
+            <li>
+                <input type="radio" id="q4option2" name="question4" value="Saturn">
+                <label for="q4option2">Saturn</label>
+            </li>
+            <li>
+                <input type="radio" id="q4option3" name="question4" value="Earth">
+                <label for="q4option3">Earth</label>
+            </li>
+            <li>
+                <input type="radio" id="q4option4" name="question4" value="Mars">
+                <label for="q4option4">Mars</label>
+            </li>
+        </ul>
+        <button id="next-button4" onclick=" checkQuestion4();showNextQuestion(4);">Next</button>
+        <div id="result4"></div>
+    </div>
+
+    <!--end Q4 -->
+
+    <!-- Question 5 -->
+
+    <div class="question" id="question5" style="display:none">
+        <h2>Which element is known as the 'king of chemicals'?</h2>
+        <ul>
+            <li>
+                <input type="radio" id="q5option1" name="question5" value="Hydrogen">
+                <label for="q5option1">Hydrogen</label>
+            </li>
+            <li>
+                <input type="radio" id="q5option2" name="question5" value="Oxygen">
+                <label for="q5option2">Oxygen</label>
+            </li>
+            <li>
+                <input type="radio" id="q5option3" name="question5" value="Sulfuric Acid">
+                <label for="q5option3">Sulfuric Acid</label>
+            </li>
+            <li>
+                <input type="radio" id="q5option4" name="question5" value="Carbon">
+                <label for="q5option4">Carbon</label>
+            </li>
+        </ul>
+        <button id="next-button5" onclick=" checkQuestion5();showNextQuestion(5);" onclick>Next</button>
+        <div id="result5"></div>
+    </div>
+
+    <!--end Q5 -->
+
+    <!-- Question 6 -->
+
+    <div class="question" id="question6" style="display:none">
+        <h2>What is the capital of Japan?</h2>
+        <ul>
+            <li>
+                <input type="radio" id="q6option1" name="question6" value="Tokyo">
+                <label for="q6option1">Tokyo</label>
+            </li>
+            <li>
+                <input type="radio" id="q6option2" name="question6" value="Kyoto">
+                <label for="q6option2">Kyoto</label>
+            </li>
+            <li>
+                <input type="radio" id="q6option3" name="question6" value="Osaka">
+                
+                </label for="q6option3">Osaka</label>
+            </li>
+            <li>
+                <input type="radio" id="q6option4" name="question6" value="Hiroshima">
+                <label for="q6option4">Hiroshima</label>
+            </li>
+
+        </ul>
+        <button id="next-button6" onclick="showNextQuestion(6)">Next</button>
+        <div id="result6"></div>
+    </div>
+
+    <!--end Q6 -->
+
+                    
+    
 
     <!-- end of quiz results here -->
     </div>
@@ -76,6 +189,7 @@
     
     <script src="check_Qs.js"></script>
     <script src="nextQ.js"></script>
+    <script src="update_score.js"></script>
     
 </body>
 </html>
