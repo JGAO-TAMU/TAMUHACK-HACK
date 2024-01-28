@@ -7,7 +7,7 @@ var technical_score = 0; // Points for technical interest
 var numerical_score = 0; // Points for numerical skills
 var curiosity_score = 0; // Points for curiosity
 
-var science_score = 0; //category scores
+var science_score = 0; //category scores to be calculated later
 var technology_score = 0; 
 var engineering_score = 0; 
 var math_score = 0; 
@@ -38,12 +38,13 @@ function showNextQuestion(currentQuestionNumber) {
 
 function bestSubject() {
     // Example formula for calculating a Science score
-    science_score = curiosity_score + perseverance_score + observation_score + creativity_score;
+    science_score = curiosity_score + perseverance_score + observation_score;
     technology_score = curiosity_score + problemSolving_score + technical_score; //do not confuse with technical_score
-    engineering_score = problemSolving_score + observation_score + technical_score + numerical_score;
+    engineering_score = problemSolving_score + technical_score + numerical_score;
     math_score = problemSolving_score + perseverance_score + numerical_score;
+
     if (science_score > technology_score && science_score > engineering_score && science_score > math_score) {
-        best_subject = "Science";
+        best_subject = "Science"; 
     }
     else if (technology_score > science_score && technolgy_score > engineering_score && technolgy_score > math_score) {
         best_subject = "Technology";
@@ -171,26 +172,124 @@ function checkQuestion4() { //creativity question
 
 }
 
-function checkQuestion5() { //chemical question
+function checkQuestion5() { //science kit 
     let selectedOption = document.querySelector('input[name="question5"]:checked');
     //let resultElement = document.getElementById("result5");
-    if (selectedOption && selectedOption.value === "Sulfuric Acid") {
+    if (selectedOption && selectedOption.value === "RushIn") {
         // Correct 
-        numerical_score += 1;
+        curiosity_score += 4;
         technical_score += 1;
+        observation_score += 1;
+    }
+    else if (selectedOption && selectedOption.value === "ReadUp") {
+        curiosity_score += 2;
+        technical_score += 2;
+        perseverance_score += 2;
+    }
+    else if (selectedOption && selectedOption.value === "SetAside") {
+        curiosity_score -= 1;
 
     }
 }
 
 
-function checkQuestion6() { //capital question
+function checkQuestion6() { //game or app
     let selectedOption = document.querySelector('input[name="question6"]:checked');
     //let resultElement = document.getElementById("result6");
-    if (selectedOption && selectedOption.value === "Tokyo") {
-        // Correct 
+    if (selectedOption && selectedOption.value === "Build") {
+        technical_score += 3;
+        problemSolving_score += 2;
         perseverance_score += 1;
     } 
+    else if (selectedOption && selectedOption.value === "Learning") {
+        curiosity_score += 2;
+        perseverance_score += 2;
+        observation_score += 2;
+    }
+    else if (selectedOption && selectedOption.value === "FriendFun") {
+        creativity_score += 2;
+        observation_score += 1;
+    }
 }
+
+function checkQuestion7() { //computer or tablet
+    let selectedOption = document.querySelector('input[name="question7"]:checked');
+    //let resultElement = document.getElementById("result7");
+    if (selectedOption && selectedOption.value === "Explore") {
+        // Correct 
+        curiosity_score += 4;
+        technical_score += 1;
+        observation_score += 1;
+    }
+    else if (selectedOption && selectedOption.value === "PlayWatch") {
+        technical_score += 1;
+        perseverance_score += 2;
+        observation_score += 2;
+    }
+    else if (selectedOption && selectedOption.value === "Necessity") {
+        curiosity_score -= 1;
+        numerical_score += 1;
+
+    }
+}
+
+function checkQuestion8() { //blocks
+    let selectedOption = document.querySelector('input[name="question8"]:checked');
+    //let resultElement = document.getElementById("result8");
+    if (selectedOption && selectedOption.value === "BuildCreative") {
+        // Correct 
+        curiosity_score += 3;
+        technical_score += 1;
+        observation_score += 1;
+        creativity_score += 2;
+    }
+    else if (selectedOption && selectedOption.value === "FollowDesign") {
+        technical_score += 3;
+        perseverance_score += 2;
+        observation_score += 3;
+    }
+    else if (selectedOption && selectedOption.value === "PreferOther") {
+        technical_score -=1;
+        
+
+    }
+}
+
+function checkQuestion9() { //math problems
+    let selectedOption = document.querySelector('input[name="question9"]:checked');
+    //let resultElement = document.getElementById("result9");
+    if (selectedOption && selectedOption.value === "EnjoyChallenge") {  
+        numerical_score += 4;
+        problemSolving_score += 3;
+        perseverance_score += 2;
+    }
+    else if (selectedOption && selectedOption.value === "OkayWithMath") {
+        //nothing for now
+    }
+    else if (selectedOption && selectedOption.value === "PreferOther") {
+        numerical_score -= 1;
+
+    }
+}
+
+function checkQuestion10() { //tiles
+    let selectedOption = document.querySelector('input[name="question10"]:checked');
+    //let resultElement = document.getElementById("result10");
+    if (selectedOption && selectedOption.value === "FindPattern") {  
+        numerical_score += 4;
+        perseverance_score += 3;
+    }
+    else if (selectedOption && selectedOption.value === "AestheticAppreciation") {
+        creativity_score += 2;
+        observation_score += 2;
+    }
+    else if (selectedOption && selectedOption.value === "Imagination") {
+        creativity_score += 2;
+        curiosity_score += 2;
+
+    }
+}
+
 
 
 

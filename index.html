@@ -8,7 +8,11 @@
 
 <body>
     <div id="quiz">
-        
+
+        <!--######################################################################-->
+        <!-- ### UPDATE last_question_number IN SCRIPT WHEN ADDING QUESTIONS ### -->
+        <!--######################################################################-->
+
         <!-- Quiz content will go here -->
         <!-- Question 1: Problem Solving -->
 <div class="question" id="question1">
@@ -28,7 +32,7 @@
         </li>
     </ul>
     <button id="next-button1" onclick="checkQuestion1(); showNextQuestion(1);">Next</button>
-    <div id="result1"></div>
+    
 </div>
 
 <!-- Question 2: Perseverance -->
@@ -49,7 +53,7 @@
         </li>
     </ul>
     <button id="next-button2" onclick="checkQuestion2(); showNextQuestion(2);" style="display:none">Next</button>
-    <div id="result2"></div>
+    
 </div>
 
 <!-- Question 3: Creativity -->
@@ -70,7 +74,7 @@
         </li>
     </ul>
     <button id="next-button3" onclick="checkQuestion3(); showNextQuestion(3);">Next</button>
-    <div id="result3"></div>
+    
 </div>
 
     <!-- Question 4: Creativity -->
@@ -91,34 +95,31 @@
         </li>
     </ul>
     <button id="next-button4" onclick="checkQuestion4(); showNextQuestion(4);">Next</button>
-    <div id="result4"></div>
+    
 </div>
 
 
-    <!-- Question 5 -->
+    <!-- Question 5 --> 
 
     <div class="question" id="question5" style="display:none">
-        <h2>Which element is known as the 'king of chemicals'?</h2>
+        <h2>What would you do if you got a science kit as a gift?</h2>
         <ul>
             <li>
-                <input type="radio" id="q5option1" name="question5" value="Hydrogen">
-                <label for="q5option1">Hydrogen</label>
+                <input type="radio" id="q5option1" name="question5" value="RushIn">
+                <label for="q5option1">Immediately start experimenting with it. </label>
             </li>
             <li>
-                <input type="radio" id="q5option2" name="question5" value="Oxygen">
-                <label for="q5option2">Oxygen</label>
+                <input type="radio" id="q5option2" name="question5" value="ReadUp">
+                <label for="q5option2">Read the instructions and think about what experiments I could do.</label>
             </li>
             <li>
-                <input type="radio" id="q5option3" name="question5" value="Sulfuric Acid">
-                <label for="q5option3">Sulfuric Acid</label>
+                <input type="radio" id="q5option3" name="question5" value="SetAside">
+                <label for="q5option3">I might try it if I have nothing else to do.</label>
             </li>
-            <li>
-                <input type="radio" id="q5option4" name="question5" value="Carbon">
-                <label for="q5option4">Carbon</label>
-            </li>
+            
         </ul>
         <button id="next-button5" onclick=" checkQuestion5();showNextQuestion(5);" onclick>Next</button>
-        <div id="result5"></div>
+        <!--<div id="result5"></div>--> 
     </div>
 
     <!--end Q5 -->
@@ -126,32 +127,113 @@
     <!-- Question 6 -->
 
     <div class="question" id="question6" style="display:none">
-        <h2>What is the capital of Japan?</h2>
+        <h2>If you could invent a new app or game, what would it be about?</h2>
         <ul>
             <li>
-                <input type="radio" id="q6option1" name="question6" value="Tokyo">
-                <label for="q6option1">Tokyo</label>
+                <input type="radio" id="q6option1" name="question6" value="Build">
+                <label for="q6option1">A game that lets you build your own world.</label>
             </li>
             <li>
-                <input type="radio" id="q6option2" name="question6" value="Kyoto">
-                <label for="q6option2">Kyoto</label>
+                <input type="radio" id="q6option2" name="question6" value="Learning">
+                <label for="q6option2">An app to help people learn new things.</label>
             </li>
             <li>
-                <input type="radio" id="q6option3" name="question6" value="Osaka">
+                <input type="radio" id="q6option3" name="question6" value="FriendFun">
                 
-                </label for="q6option3">Osaka</label>
+                </label for="q6option3">A fun game that I can play with friends.</label>
             </li>
-            <li>
-                <input type="radio" id="q6option4" name="question6" value="Hiroshima">
-                <label for="q6option4">Hiroshima</label>
-            </li>
-
+            
         </ul>
         <button id="next-button6" onclick="checkQuestion6(); showNextQuestion(6)">Next</button>
         <div id="result6"></div>
     </div>
 
     <!--end Q6 -->
+
+    <!-- Question 7 -->
+<div class="question" id="question7" style="display:none">
+    <h2>How do you feel when you use a computer or tablet?</h2>
+    <ul>
+        <li>
+            <input type="radio" id="q7option1" name="question7" value="Explore">
+            <label for="q7option1">I like finding out how to do new things on it.</label>
+        </li>
+        <li>
+            <input type="radio" id="q7option2" name="question7" value="PlayWatch">
+            <label for="q7option2">It's fun, but I mostly use it to play games or watch videos.</label>
+        </li>
+        <li>
+            <input type="radio" id="q7option3" name="question7" value="Necessity">
+            <label for="q7option3">I use it when I have to, like for schoolwork.</label>
+        </li>
+    </ul>
+    <button id="next-button7" onclick="checkQuestion7();showNextQuestion(7);">Next</button>
+</div>
+<!-- end Q7 -->
+
+<!-- Question 8 -->
+<div class="question" id="question8" style="display:none">
+    <h2>When you play with building blocks, what do you usually do?</h2>
+    <ul>
+        <li>
+            <input type="radio" id="q8option1" name="question8" value="BuildCreative">
+            <label for="q8option1">Try to build the tallest or most unusual structure I can.</label>
+        </li>
+        <li>
+            <input type="radio" id="q8option2" name="question8" value="FollowDesign">
+            <label for="q8option2">Follow the instructions to make the design on the box.</label>
+        </li>
+        <li>
+            <input type="radio" id="q8option3" name="question8" value="PreferOther">
+            <label for="q8option3">I prefer to draw or play other games.</label>
+        </li>
+    </ul>
+    <button id="next-button8" onclick="checkQuestion8();showNextQuestion(8);">Next</button>
+</div>
+<!-- end Q8 -->
+
+<!-- Question 9 -->
+<div class="question" id="question9" style="display:none">
+    <h2>How do you feel about solving math problems?</h2>
+    <ul>
+        <li>
+            <input type="radio" id="q9option1" name="question9" value="EnjoyChallenge">
+            <label for="q9option1">I like trying to figure them out, especially tricky ones.</label>
+        </li>
+        <li>
+            <input type="radio" id="q9option2" name="question9" value="OkayWithMath">
+            <label for="q9option2">They're okay, but I prefer doing other things.</label>
+        </li>
+        <li>
+            <input type="radio" id="q9option3" name="question9" value="NecessityOnly">
+            <label for="q9option3">I do them when I have to for school.</label>
+        </li>
+    </ul>
+    <button id="next-button9" onclick="checkQuestion9();showNextQuestion(9);">Next</button>
+</div>
+<!-- end Q9 -->
+
+<!-- Question 10 -->
+<div class="question" id="question10" style="display:none">
+    <h2>When you see patterns in tiles or wallpapers, what do you think?</h2>
+    <ul>
+        <li>
+            <input type="radio" id="q10option1" name="question10" value="FindPattern">
+            <label for="q10option1">I try to figure out the pattern and what comes next.</label>
+        </li>
+        <li>
+            <input type="radio" id="q10option2" name="question10" value="AestheticAppreciation">
+            <label for="q10option2">I think they look nice.</label>
+        </li>
+        <li>
+            <input type="radio" id="q10option3" name="question10" value="Imagination">
+            <label for="q10option3">I like to imagine different shapes or stories in the patterns.</label>
+        </li>
+    </ul>
+    <button id="next-button10" onclick="checkQuestion10();showNextQuestion(10);">Next</button>
+</div>
+<!-- end Q10 -->
+
 
     
     </div> <!-- end of quiz div -->
