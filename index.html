@@ -1,256 +1,52 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>My fun Quiz</title>
-    
+    <title>FloSTEM</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link to CSS file -->
 </head>
-
 <body>
-    <div id="quiz">
+    <!--Top Nav Bar-->
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
 
-        <!--######################################################################-->
-        <!-- ### UPDATE last_question_number IN SCRIPT WHEN ADDING QUESTIONS ### -->
-        <!--######################################################################-->
 
+    <div class="app" id="question1">
+        <h1>1. When faced with a difficult puzzle or game, how do you usually react?</h1>
+    </div>
+    <div class="quiz">
+    <div id="answer-buttons">
+        <button class="left-button" class="btn-purple">            <input type="hidden" id="q1option1" name="question1" value="EnjoyChallenge">
+            <label for="q1option1">I enjoy the challenge and try different ways to solve it.</label></button>
+        <button class="right-button" class="btn-purple"><input type="hidden" id="q1option2" name="question1" value="TryThenMoveOn">
+            <label for="q1option2">I try for a little while, but if it's too hard, I move on to something else.</label></button>
+        <button class="button3" class="btn-purple"> <input type="hidden" id="q1option3" name="question1" value="PreferEasyPuzzles">
+            <label for="q1option3">I prefer puzzles that I know I can solve quickly.</label></button>
+            
+        <button id="next-button1" onclick="checkQuestion1(); showNextQuestion(1);">Next</button>
+        <div id="result1"></div>
+    </div>
+    </div>
+    <button id="next-btn">Next</button>
+</div>
+    <div id="quiz-container">
         <!-- Quiz content will go here -->
-        <!-- Question 1: Problem Solving -->
-<div class="question" id="question1">
-    <h2>When faced with a difficult puzzle or game, how do you usually react?</h2>
-    <ul>
-        <li>
-            <input type="radio" id="q1option1" name="question1" value="EnjoyChallenge">
-            <label for="q1option1">I enjoy the challenge and try different ways to solve it.</label>
-        </li>
-        <li>
-            <input type="radio" id="q1option2" name="question1" value="TryThenMoveOn">
-            <label for="q1option2">I try for a little while, but if it's too hard, I move on to something else.</label>
-        </li>
-        <li>
-            <input type="radio" id="q1option3" name="question1" value="PreferEasyPuzzles">
-            <label for="q1option3">I prefer puzzles that I know I can solve quickly.</label>
-        </li>
-    </ul>
-    <button id="next-button1" onclick="checkQuestion1(); showNextQuestion(1);">Next</button>
-    
-</div>
-
-<!-- Question 2: Perseverance -->
-<div class="question" id="question2" style="display:none">
-    <h2>How do you feel about working on a project that takes several days to complete?</h2>
-    <ul>
-        <li>
-            <input type="radio" id="q2option1" name="question2" value="EnjoyLongProjects">
-            <label for="q2option1">I like seeing it through to the end, no matter how long it takes.</label>
-        </li>
-        <li>
-            <input type="radio" id="q2option2" name="question2" value="OkayWithLongProjects">
-            <label for="q2option2">I'm okay with it, but I prefer quicker tasks.</label>
-        </li>
-        <li>
-            <input type="radio" id="q2option3" name="question2" value="PreferQuickTasks">
-            <label for="q2option3">I get bored and lose interest in long projects.</label>
-        </li>
-    </ul>
-    <button id="next-button2" onclick="checkQuestion2(); showNextQuestion(2);" style="display:none">Next</button>
-    
-</div>
-
-<!-- Question 3: Creativity -->
-<div class="question" id="question3" style="display:none">
-    <h2>If you were given a box of random objects, what would you do with them?</h2>
-    <ul>
-        <li>
-            <input type="radio" id="q3option1" name="question3" value="CreateSomethingNew">
-            <label for="q3option1">Try to create something new or invent a game.</label>
-        </li>
-        <li>
-            <input type="radio" id="q3option2" name="question3" value="UseAsIntended">
-            <label for="q3option2">Sort them or use them as they are supposed to be used.</label>
-        </li>
-        <li>
-            <input type="radio" id="q3option3" name="question3" value="NotSure">
-            <label for="q3option3">I'm not sure; maybe just look at them.</label>
-        </li>
-    </ul>
-    <button id="next-button3" onclick="checkQuestion3(); showNextQuestion(3);">Next</button>
-    
-</div>
-
-    <!-- Question 4: Creativity -->
-<div class="question" id="question4" style="display:none">
-    <h2>Imagine you have to use everyday items to solve a problem. Which approach do you prefer?</h2>
-    <ul>
-        <li>
-            <input type="radio" id="q4option1" name="question4" value="Innovative">
-            <label for="q4option1">I like to think of unusual and creative ways to use them.</label>
-        </li>
-        <li>
-            <input type="radio" id="q4option2" name="question4" value="Traditional">
-            <label for="q4option2">I prefer to use them in their traditional or common way.</label>
-        </li>
-        <li>
-            <input type="radio" id="q4option3" name="question4" value="AskForHelp">
-            <label for="q4option3">I usually ask someone else or look up how to solve it.</label>
-        </li>
-    </ul>
-    <button id="next-button4" onclick="checkQuestion4(); showNextQuestion(4);">Next</button>
-    
-</div>
-
-
-    <!-- Question 5 --> 
-
-    <div class="question" id="question5" style="display:none">
-        <h2>What would you do if you got a science kit as a gift?</h2>
-        <ul>
-            <li>
-                <input type="radio" id="q5option1" name="question5" value="RushIn">
-                <label for="q5option1">Immediately start experimenting with it. </label>
-            </li>
-            <li>
-                <input type="radio" id="q5option2" name="question5" value="ReadUp">
-                <label for="q5option2">Read the instructions and think about what experiments I could do.</label>
-            </li>
-            <li>
-                <input type="radio" id="q5option3" name="question5" value="SetAside">
-                <label for="q5option3">I might try it if I have nothing else to do.</label>
-            </li>
-            
-        </ul>
-        <button id="next-button5" onclick=" checkQuestion5();showNextQuestion(5);" onclick>Next</button>
-        <!--<div id="result5"></div>--> 
     </div>
-
-    <!--end Q5 -->
-
-    <!-- Question 6 -->
-
-    <div class="question" id="question6" style="display:none">
-        <h2>If you could invent a new app or game, what would it be about?</h2>
-        <ul>
-            <li>
-                <input type="radio" id="q6option1" name="question6" value="Build">
-                <label for="q6option1">A game that lets you build your own world.</label>
-            </li>
-            <li>
-                <input type="radio" id="q6option2" name="question6" value="Learning">
-                <label for="q6option2">An app to help people learn new things.</label>
-            </li>
-            <li>
-                <input type="radio" id="q6option3" name="question6" value="FriendFun">
-                
-                </label for="q6option3">A fun game that I can play with friends.</label>
-            </li>
-            
-        </ul>
-        <button id="next-button6" onclick="checkQuestion6(); showNextQuestion(6)">Next</button>
-        <div id="result6"></div>
-    </div>
-
-    <!--end Q6 -->
-
-    <!-- Question 7 -->
-<div class="question" id="question7" style="display:none">
-    <h2>How do you feel when you use a computer or tablet?</h2>
-    <ul>
-        <li>
-            <input type="radio" id="q7option1" name="question7" value="Explore">
-            <label for="q7option1">I like finding out how to do new things on it.</label>
-        </li>
-        <li>
-            <input type="radio" id="q7option2" name="question7" value="PlayWatch">
-            <label for="q7option2">It's fun, but I mostly use it to play games or watch videos.</label>
-        </li>
-        <li>
-            <input type="radio" id="q7option3" name="question7" value="Necessity">
-            <label for="q7option3">I use it when I have to, like for schoolwork.</label>
-        </li>
-    </ul>
-    <button id="next-button7" onclick="checkQuestion7();showNextQuestion(7);">Next</button>
-</div>
-<!-- end Q7 -->
-
-<!-- Question 8 -->
-<div class="question" id="question8" style="display:none">
-    <h2>When you play with building blocks, what do you usually do?</h2>
-    <ul>
-        <li>
-            <input type="radio" id="q8option1" name="question8" value="BuildCreative">
-            <label for="q8option1">Try to build the tallest or most unusual structure I can.</label>
-        </li>
-        <li>
-            <input type="radio" id="q8option2" name="question8" value="FollowDesign">
-            <label for="q8option2">Follow the instructions to make the design on the box.</label>
-        </li>
-        <li>
-            <input type="radio" id="q8option3" name="question8" value="PreferOther">
-            <label for="q8option3">I prefer to draw or play other games.</label>
-        </li>
-    </ul>
-    <button id="next-button8" onclick="checkQuestion8();showNextQuestion(8);">Next</button>
-</div>
-<!-- end Q8 -->
-
-<!-- Question 9 -->
-<div class="question" id="question9" style="display:none">
-    <h2>How do you feel about solving math problems?</h2>
-    <ul>
-        <li>
-            <input type="radio" id="q9option1" name="question9" value="EnjoyChallenge">
-            <label for="q9option1">I like trying to figure them out, especially tricky ones.</label>
-        </li>
-        <li>
-            <input type="radio" id="q9option2" name="question9" value="OkayWithMath">
-            <label for="q9option2">They're okay, but I prefer doing other things.</label>
-        </li>
-        <li>
-            <input type="radio" id="q9option3" name="question9" value="NecessityOnly">
-            <label for="q9option3">I do them when I have to for school.</label>
-        </li>
-    </ul>
-    <button id="next-button9" onclick="checkQuestion9();showNextQuestion(9);">Next</button>
-</div>
-<!-- end Q9 -->
-
-<!-- Question 10 -->
-<div class="question" id="question10" style="display:none">
-    <h2>When you see patterns in tiles or wallpapers, what do you think?</h2>
-    <ul>
-        <li>
-            <input type="radio" id="q10option1" name="question10" value="FindPattern">
-            <label for="q10option1">I try to figure out the pattern and what comes next.</label>
-        </li>
-        <li>
-            <input type="radio" id="q10option2" name="question10" value="AestheticAppreciation">
-            <label for="q10option2">I think they look nice.</label>
-        </li>
-        <li>
-            <input type="radio" id="q10option3" name="question10" value="Imagination">
-            <label for="q10option3">I like to imagine different shapes or stories in the patterns.</label>
-        </li>
-    </ul>
-    <button id="next-button10" onclick="checkQuestion10();showNextQuestion(10);">Next</button>
-</div>
-<!-- end Q10 -->
-
-
-    
-    </div> <!-- end of quiz div -->
-    <!-- end of quiz results here -->
     <div id="results" style="display:none">
         <h3>Quiz Results!</h3>
 
-        <p id="results-best">Best subject: n</p>
+        <p id="results-total">Total score: n</p>
+        <p id="results-animal">Animal score: n</p>
         <p id="results-science">Science score: n</p>
-        <p id="results-technology">Technology score: n</p>
-        <p id="results-engineering">Engineering score: n</p>
-        <p id="results-math">Math score: n</p>
+        <p id="results-geography">Geography score: n</p>
         <p id="congrats">nice job!!!</p>
         <button id="reset-button" onclick="location.reload()">Reset Quiz</button>
     </div>
-
+    <!-- Link to JavaScript file -->
     <script src="script.js"></script>
-    
 </body>
 </html>
