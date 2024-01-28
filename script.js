@@ -59,7 +59,7 @@ function redirectPage(best_subject){
 function bestSubject() {
     // Example formula for calculating a Science score
     science_score = curiosity_score + perseverance_score + observation_score - 3;
-    technology_score = curiosity_score + problemSolving_score + technical_score + 5; //do not confuse with technical_score
+    technology_score = curiosity_score + problemSolving_score + technical_score + 2; //do not confuse with technical_score
     engineering_score = problemSolving_score + technical_score + numerical_score;
     math_score = problemSolving_score + perseverance_score + numerical_score + 2;
 
