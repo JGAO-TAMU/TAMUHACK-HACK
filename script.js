@@ -1,10 +1,17 @@
 var score = 0; // Initialize score
-var animal_score = 0; //for getting animal questions correct (subject 1)   
-var science_score = 0; //for getting science questions correct (subject 2)
-var geography_score = 0; //for getting geography questions correct (subject 3)
-var health_score = 0; //for getting health questions correct (subject 4)
-var math_score = 0; //for getting math questions correct (subject 5)
-var best_subject = -1; //best score out of the subjects
+var problemSolving_score = 0; // Points for problem-solving skills
+var perseverance_score = 0; // Points for perseverance
+var creativity_score = 0; // Points for creativity
+var observation_score = 0; // Points for observation skills
+var technical_score = 0; // Points for technical interest
+var numerical_score = 0; // Points for numerical skills
+var curiosity_score = 0; // Points for curiosity
+
+var science_score = 0; //category scores
+var technology_score = 0; 
+var engineering_score = 0; 
+var math_score = 0; 
+
 var last_question_number = 6; //last question number ***CHANGE THIS IF YOU ADD MORE QUESTIONS***
 
 function showNextQuestion(currentQuestionNumber) {
@@ -24,11 +31,36 @@ function showNextQuestion(currentQuestionNumber) {
     } else {
 
         //alert("Quiz over! (should be a redirect to the results page)");
+        bestSubject();
         show_results();
     }
 }
 
+function bestSubject() {
+    // Example formula for calculating a Science score
+    science_score = curiosity_score + perseverance_score + observation_score + creativity_score;
+    technology_score = curiosity_score + problemSolving_score + technical_score; //do not confuse with technical_score
+    engineering_score = problemSolving_score + observation_score + technical_score + numerical_score;
+    math_score = problemSolving_score + perseverance_score + numerical_score;
+    if (science_score > technology_score && science_score > engineering_score && science_score > math_score) {
+        best_subject = "Science";
+    }
+    else if (technology_score > science_score && technolgy_score > engineering_score && technolgy_score > math_score) {
+        best_subject = "Technology";
+    }
+    else if (engineering_score > science_score && engineering_score > technology_score && engineering_score > math_score) {
+        best_subject = "Engineering";
+    }
+    else if (math_score > science_score && math_score > technology_score && math_score > engineering_score) {
+        best_subject = "Math";
+    }
+    else { //implement a tiebreaker? or just avoid this case? or special message?
+        best_subject = "No best subject";
+    }
+    return best_subject;
+}
 
+/*
 function updateScore() {
     score += 1;
     document.getElementById('score').textContent = 'Score: ' + score;
@@ -46,96 +78,119 @@ function updateGeography() {
     geography_score += 1;
 }
 
-
+*/
 function show_results() {
     //last_question_number = 6;
     //document.getElementById("question" + last_question_number).textContent = 'bababoey';
     document.getElementById("question" + last_question_number).style.display = 'none';
     document.getElementById('results').style.display = 'block';
-    document.getElementById('results-total').textContent = 'Total score: ' + score;
-    document.getElementById('results-animal').textContent = 'Animal score: ' + animal_score;
+    document.getElementById('results-best').textContent = 'Overall pick: ' + best_subject;
     document.getElementById('results-science').textContent = 'Science score: ' + science_score;
-    document.getElementById('results-geography').textContent = 'Geography score: ' + geography_score;
-}
+    document.getElementById('results-technology').textContent = 'Technology score: ' + technology_score;
+    document.getElementById('results-engineering').textContent = 'Engineering score: ' + engineering_score;
+    document.getElementById('results-math').textContent = 'Math score: ' + math_score;
+}   
 
 
-function checkQuestion1() { //cat question
-    let selectedOption = document.querySelector('input[name="question1"]:checked');
-    let resultElement = document.getElementById("result1");
-    if (selectedOption && selectedOption.value === "Black") {
-        // Correct 
-        updateScore();
-        updateAnimal();
-    } else {
-        // Incorrect (dosnt do anything)
-        resultElement.textContent = "Nope!";
-    }
-}
-
-function checkQuestion2() { //dog question
+function checkQuestion1() { //problem question
 
     let selectedOption = document.querySelector('input[name="question2"]:checked');
-    let resultElement = document.getElementById("result2");
-    if (selectedOption && selectedOption.value === "Golden") {
-        // Correct 
-        updateScore();
-        updateAnimal();
-    } else {
-        // Incorrect 
-        resultElement.textContent = "Nope!";
+    //let resultElement = document.getElementById("result2");
+    if (selectedOption && selectedOption.value === "EnjoyChallenge") {
+        
+        problemSolving_score += 3;
+        technical_score += 1;
+        perseverance_score += 1;
+        creativity_score += 2;
+    } 
+    else if (selectedOption && selectedOption.value === "TryThenMoveOn") {
+         
+        problemSolving_score += 2;
+        technical_score += 1;
+        creativity_score += 1;
+    }
+    else if (selectedOption && selectedOption.value === "PreferEasyPuzzles") {
+        problemSolving_score += 1;
+    }
+
+}
+
+function checkQuestion2() { //perseverance question
+    let selectedOption = document.querySelector('input[name="question1"]:checked');
+    //let resultElement = document.getElementById("result1");
+    if (selectedOption && selectedOption.value === "EnjoyLongProjects") {
+        perseverance_score += 3;
+        problemSolving_score += 2;
+    } 
+    else if (selectedOption && selectedOption.value === "OkayWithLongProjects") {
+        perseverance_score += 1;
+        problemSolving_score += 2;
+    }
+    else if (selectedOption && selectedOption.value === "PreferQuickTasks") {
+        problemSolving_score += 1;
     }
 }
 
-function checkQuestion3() { //cheetah question
+function checkQuestion3() { //creative question
     let selectedOption = document.querySelector('input[name="question3"]:checked');
-    let resultElement = document.getElementById("result3");
-    if (selectedOption && selectedOption.value === "Cheetah") {
-        // Correct 
-        updateScore();
-        updateAnimal();
-    } else {
-        // Incorrect 
-        resultElement.textContent = "Nope!";
+    //let resultElement = document.getElementById("result3");
+    if (selectedOption && selectedOption.value === "CreateSomethingNew") {
+         
+        creativity_score += 3;
+        observation_score += 1;
+        
+    } 
+    else if (selectedOption && selectedOption.value === "UseAsIntended") {
+        observation_score += 2;
+        technical_score += 1;
+        
+    }
+    else if (selectedOption && selectedOption.value === "NotSure") {
+        // Incorrect?
     }
 }
 
-function checkQuestion4() { //planet question
+function checkQuestion4() { //creativity question
     let selectedOption = document.querySelector('input[name="question4"]:checked');
     let resultElement = document.getElementById("result4");
-    if (selectedOption && selectedOption.value === "Jupiter") {
-        // Correct 
-        updateScore();
-        updateScience();
-    } else {
-        // Incorrect 
-        resultElement.textContent = "Nope!";
+    if (selectedOption && selectedOption.value === "Innovative") {
+        creativity_score += 3;
+        observation_score += 1;
+        problemSolving_score += 1;
+        technical_score += 1;
+    } 
+    else if (selectedOption && selectedOption.value === "Traditional") {
+        observation_score += 2;
+        technical_score += 2;
+        problemSolving_score += 1;
     }
+    else if (selectedOption && selectedOption.value === "AskForHelp") {
+        problemSolving_score += 1;
+        perseverance_score += 1;
+    }
+
 }
 
 function checkQuestion5() { //chemical question
     let selectedOption = document.querySelector('input[name="question5"]:checked');
-    let resultElement = document.getElementById("result5");
+    //let resultElement = document.getElementById("result5");
     if (selectedOption && selectedOption.value === "Sulfuric Acid") {
         // Correct 
-        updateScore();
-        updateScience();
-    } else {
-        // Incorrect 
-        resultElement.textContent = "Nope!";
+        numerical_score += 1;
+        technical_score += 1;
+
     }
 }
 
 
 function checkQuestion6() { //capital question
     let selectedOption = document.querySelector('input[name="question6"]:checked');
-    let resultElement = document.getElementById("result6");
+    //let resultElement = document.getElementById("result6");
     if (selectedOption && selectedOption.value === "Tokyo") {
         // Correct 
-        updateScore();
-        updateGeography();
-    } else {
-        // Incorrect 
-        resultElement.textContent = "Nope!";
-    }
+        perseverance_score += 1;
+    } 
 }
+
+
 
