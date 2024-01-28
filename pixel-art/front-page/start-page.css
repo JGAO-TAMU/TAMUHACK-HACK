@@ -1,0 +1,17 @@
+body{
+    background-color: #76e7ff;
+}
+.logo{
+    transform: translate(600px, 35px);
+
+}
+.play-button{
+    width: 100px;
+    height: 100px;
+    transform: translate(700px, 80px);
+
+}
+.play-button img{
+    transition: filter 0.3s ease-in-out;
+}
+

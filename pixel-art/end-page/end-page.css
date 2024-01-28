@@ -1,0 +1,81 @@
+.engr{
+	background-color: #1e453e;
+	font-family: 'Roboto';
+	font-weight: light;
+}
+
+.gnome-image{
+	transform: translate(550px, 50px);
+}
+
+.engr-msg{
+	margin-left: 600px;
+	margin-top: 150px;
+	background: #fff;
+	width: 90%;
+	max-width: 600px;
+	margin: 50px auto 0;
+	border-radius: 40px;
+	padding: 30px;
+	text-align: center;
+}
+
+.math{
+	background-color: rgb(244, 249, 185);
+	font-family: 'Roboto';
+	font-weight: light;	
+}
+.wizard-image{
+	transform: translate(550px, 50px);
+}
+.math-msg{
+	margin-left: 600px;
+	margin-top: 150px;
+	background: #fff;
+	width: 90%;
+	max-width: 600px;
+	margin: 50px auto 0;
+	border-radius: 40px;
+	padding: 30px;
+	text-align: center;
+}
+
+.sci{
+	background-color: rgb(99, 34, 34);
+	font-family: 'Roboto';
+	font-weight: light;	
+}
+.witch-image{
+	transform: translate(550px, 50px);
+}
+.sci-msg{
+	margin-left: 600px;
+	margin-top: 150px;
+	background: #fff;
+	width: 90%;
+	max-width: 600px;
+	margin: 50px auto 0;
+	border-radius: 40px;
+	padding: 30px;
+	text-align: center;
+}
+
+.tech{
+	background-color: rgb(26, 45, 53);
+	font-family: 'Roboto';
+	font-weight: light;	
+}
+.fairy-image{
+	transform: translate(550px, 50px);
+}
+.tech-msg{
+	margin-left: 600px;
+	margin-top: 150px;
+	background: #fff;
+	width: 90%;
+	max-width: 600px;
+	margin: 50px auto 0;
+	border-radius: 40px;
+	padding: 30px;
+	text-align: center;
+}
