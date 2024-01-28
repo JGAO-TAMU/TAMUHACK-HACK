@@ -5,9 +5,12 @@
     
 </head>
 <body>
-    <div id="question1">
-        <h2>What is the best cat color?</h2>
+    <div id="quiz">
+    
         <!-- Quiz content will go here -->
+        <!-- Question 1 -->
+        <div class="question" id="question1">
+        <h2>What is the best cat color?</h2>
         <ul>
             <li>
                 <input type="radio" id="option1" name="question1" value="Orange">
@@ -27,12 +30,46 @@
             </li>
         </ul>
     </div>
-    <button id="submit-button">Submit</button>
     
+    <button id="submit-button" onclick="checkQuestion1()">Submit</button>
     <div id="result1"></div>
     
+
+    <!-- end Q1 -->
+    <!-- Question 2 -->
+    <div class="question" id="question2" >
+        <h2>What is the best dog color?</h2>
+        <ul>
+            <li>
+                <input type="radio" id="option1" name="question2" value="Golden">
+                <label for="option1">Golden</label>
+            </li>
+            <li>
+                <input type="radio" id="option2" name="question2" value="Black">
+                <label for="option2">Black</label>
+            </li>
+            <li>
+                <input type="radio" id="option3" name="question2" value="Gray">
+                <label for="option3">Gray</label>
+            </li>
+            <li>
+                <input type="radio" id="option4" name="question2" value="Brown">
+                <label for="option4">Brown</label>
+            </li>
+        </ul>
+    </div>
+    
+    <button id="submit-button" onclick="checkQuestion2()">Submit</button>
+    <div id="result2"></div>
+    
+    <!--end Q2 -->
+
+
+    <!-- Result of the quiz will be displayed here -->
+    </div>
     <!-- Link to JavaScript file -->
-    <script src="checkq1.js"></script>
+    
+    <script src="check_Qs.js"></script>
     
 </body>
 </html>
