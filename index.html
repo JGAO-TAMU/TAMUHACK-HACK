@@ -8,7 +8,7 @@
 
 <body>
     <div id="quiz">
-        <div id="score">score: 0</div>
+        <div id="score">score: n</div>
         <!-- Quiz content will go here -->
         <!-- Question 1 -->
         <div class="question" id="question1">
@@ -174,22 +174,27 @@
             </li>
 
         </ul>
-        <button id="next-button6" onclick="showNextQuestion(6)">Next</button>
+        <button id="next-button6" onclick="checkQuestion6(); showNextQuestion(6)">Next</button>
         <div id="result6"></div>
     </div>
 
     <!--end Q6 -->
 
-                    
     
-
+    </div> <!-- end of quiz div -->
     <!-- end of quiz results here -->
+    <div id="results" style="display:none">
+        <h3>Quiz Results!</h3>
+
+        <p id="results-total">Total score: n</p>
+        <p id="results-animal">Animal score: n</p>
+        <p id="results-science">Science score: n</p>
+        <p id="results-geography">Geography score: n</p>
+        <p id="congrats">nice job!!!</p>
+        <button id="reset-button" onclick="location.reload()">Reset Quiz</button>
     </div>
-    
-    
-    <script src="check_Qs.js"></script>
-    <script src="nextQ.js"></script>
-    <script src="update_score.js"></script>
+
+    <script src="script.js"></script>
     
 </body>
 </html>
