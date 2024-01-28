@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>My Cat Quiz</title>
+    <title>My fun Quiz</title>
     
 </head>
+
 <body>
     <div id="quiz">
     
@@ -29,15 +31,16 @@
                 <label for="option4">Brown</label>
             </li>
         </ul>
+        <button id="next-button1" onclick="showNextQuestion(1)">Next</button>
+    <button id="submit-button1" onclick="checkQuestion1()" >Submit</button>
+    <div id="result1"></div>
     </div>
     
-    <button id="submit-button" onclick="checkQuestion1()">Submit</button>
-    <div id="result1"></div>
     
 
     <!-- end Q1 -->
     <!-- Question 2 -->
-    <div class="question" id="question2" >
+    <div class="question" id="question2" style="display:none">
         <h2>What is the best dog color?</h2>
         <ul>
             <li>
@@ -57,19 +60,22 @@
                 <label for="option4">Brown</label>
             </li>
         </ul>
+        <button id="submit-button2" onclick="checkQuestion2()" style="display:none">Submit</button>
+        <button id="next-button2" onclick="showNextQuestion(2)" style="display:none">Next</button>
+        <div id="result2"></div>
     </div>
     
-    <button id="submit-button" onclick="checkQuestion2()">Submit</button>
-    <div id="result2"></div>
+   
     
     <!--end Q2 -->
 
 
-    <!-- Result of the quiz will be displayed here -->
+    <!-- end of quiz results here -->
     </div>
-    <!-- Link to JavaScript file -->
+    
     
     <script src="check_Qs.js"></script>
+    <script src="nextQ.js"></script>
     
 </body>
 </html>
