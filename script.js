@@ -12,25 +12,29 @@ var technology_score = 0;
 var engineering_score = 0; 
 var math_score = 0; 
 
-var last_question_number = 6; //last question number ***CHANGE THIS IF YOU ADD MORE QUESTIONS***
+var last_question_number = 11; //last question number ***CHANGE THIS IF YOU ADD MORE QUESTIONS***
 
 function showNextQuestion(currentQuestionNumber) {
     var currentQuestion = document.getElementById('question' + currentQuestionNumber);
     var currentNButton = document.getElementById('next-button' + currentQuestionNumber);
+    var currentAButton = document.getElementById('answer-buttons' + currentQuestionNumber);
     //currentSButton = document.getElementById('submit-button' + currentQuestionNumber);
     var nextQuestion = document.getElementById('question' + (currentQuestionNumber + 1));
     var nextNButton = document.getElementById('next-button' + (currentQuestionNumber +1));
+    var nextAButton = document.getElementById('answer-buttons' + (currentQuestionNumber +1));
     //var nextSButton = document.getElementById('submit-button' + (currentQuestionNumber+1));
     if (nextQuestion) {
         currentQuestion.style.display = 'none';
         currentNButton.style.display = 'none';
+        currentAButton.style.display = 'none';
         //currentSButton.style.display = 'none';
         nextQuestion.style.display = 'block';
         nextNButton.style.display = 'block';
+        nextAButton.style.display = 'flex';
         //nextSButton.style.display = 'block';
     } else {
 
-        //alert("Quiz over! (should be a redirect to the results page)");
+        alert("Quiz over! (should be a redirect to the results page)");
         bestSubject();
         show_results();
     }
@@ -288,6 +292,19 @@ function checkQuestion10() { //tiles
         curiosity_score += 2;
 
     }
+}
+
+function checkQuestion11() { //robot or alien
+    let selectedOption = document.querySelector('input[name="question11"]:checked');
+    //let resultElement = document.getElementById("result11");
+    if (selectedOption && selectedOption.value === "Alien") {  
+        curiosity_score += 2;
+    }
+    else if (selectedOption && selectedOption.value === "Robot") {
+       observation_score += 2;
+       technical_score += 2; 
+    }
+    
 }
 
 
