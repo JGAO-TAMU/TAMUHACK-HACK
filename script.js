@@ -29,28 +29,44 @@ function showNextQuestion(currentQuestionNumber) {
         currentAButton.style.display = 'none';
         //currentSButton.style.display = 'none';
         nextQuestion.style.display = 'block';
+        //add -15px margin to the top of the next question
+        //nextQuestion.style.marginTop = '-15px';
         nextNButton.style.display = 'block';
         nextAButton.style.display = 'flex';
         //nextSButton.style.display = 'block';
     } else {
-
-        alert("Quiz over! (should be a redirect to the results page)");
+        currentQuestion.style.display = 'none';
+        currentNButton.style.display = 'none';
+        currentAButton.style.display = 'none';
         bestSubject();
         show_results();
     }
 }
-
+function redirectPage(best_subject){
+    if(best_subject == "Science"){
+        window.location.href = "sci-end-page.html";
+    }
+    else if(best_subject == "Technology"){
+        window.location.href = "tech-end-page.html";
+    }
+    else if(best_subject == "Engineering"){
+        window.location.href = "engr-end-page.html";
+    }
+    else if(best_subject == "Math"){
+        window.location.href = "math-end-page.html";
+    }
+}
 function bestSubject() {
     // Example formula for calculating a Science score
-    science_score = curiosity_score + perseverance_score + observation_score;
-    technology_score = curiosity_score + problemSolving_score + technical_score; //do not confuse with technical_score
+    science_score = curiosity_score + perseverance_score + observation_score - 3;
+    technology_score = curiosity_score + problemSolving_score + technical_score + 5; //do not confuse with technical_score
     engineering_score = problemSolving_score + technical_score + numerical_score;
-    math_score = problemSolving_score + perseverance_score + numerical_score;
+    math_score = problemSolving_score + perseverance_score + numerical_score + 2;
 
     if (science_score > technology_score && science_score > engineering_score && science_score > math_score) {
         best_subject = "Science"; 
     }
-    else if (technology_score > science_score && technolgy_score > engineering_score && technolgy_score > math_score) {
+    else if (technology_score > science_score && technology_score > engineering_score && technology_score > math_score) {
         best_subject = "Technology";
     }
     else if (engineering_score > science_score && engineering_score > technology_score && engineering_score > math_score) {
@@ -62,7 +78,8 @@ function bestSubject() {
     else { //implement a tiebreaker? or just avoid this case? or special message?
         best_subject = "No best subject";
     }
-    return best_subject;
+    redirectPage(best_subject);
+    
 }
 
 /*
