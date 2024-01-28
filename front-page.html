@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FloStem</title>
+    <link rel="stylesheet" href="start-page.css">
+</head>
+<body>
+    <div class="title" id="title-page">
+            <div class="logo">
+              <img src="flostem-logo.png" alt="FloStem Logo">
+            </div>
+            <div class="play-button">
+                <img src="play-button Copy.png"  onclick="changePage()" alt="Play Button Red" onmouseover="hoverImage()" onmouseout="unhoverImage()">
+            </div>
+
+
+    </div>
+
+    <script> 
+        function hoverImage() {
+            document.querySelector('.play-button img').src = 'play-button.png';
+        }
+
+        function unhoverImage() {
+            document.querySelector('.play-button img').src = 'play-button Copy.png';
+        }
+        function changePage(){
+          document.getElementById('title-page').innerHTML = 'New content.';
+        }
+      </script> 
+
+</body>
+</html>
